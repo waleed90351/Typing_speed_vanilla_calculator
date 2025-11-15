@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Practice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Typing Practice</h1>
+        </header>
+
+        <div class="controls">
+            <div class="text-input-section">
+                <label for="custom-text">Paste your text (leave empty for built-in text):</label>
+                <textarea id="custom-text" placeholder="Paste your text here..."></textarea>
+            </div>
+
+            <div class="timer-section">
+                <label for="time-select">Select practice time:</label>
+                <select id="time-select">
+                    <option value="60">1 minute</option>
+                    <option value="120">2 minutes</option>
+                    <option value="180">3 minutes</option>
+                    <option value="300">5 minutes</option>
+                    <option value="600">10 minutes</option>
+                </select>
+            </div>
+
+            <div class="voice-control">
+                <label>
+                    <input type="checkbox" id="voice-enabled" checked>
+                    Enable voice narration
+                </label>
+            </div>
+
+            <button id="start-btn" class="btn btn-primary">Start Typing</button>
+        </div>
+
+        <div class="typing-area" id="typing-area" style="display: none;">
+            <div class="stats-bar">
+                <div class="stat-box">
+                    <div class="stat-value-top" id="timer-stat">00:00</div>
+                    <div class="stat-label-top">Timer</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value-top" id="wpm-stat">0</div>
+                    <div class="stat-label-top">words/min</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value-top" id="cpm-stat">0</div>
+                    <div class="stat-label-top">chars/min</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value-top" id="accuracy-stat">0</div>
+                    <div class="stat-label-top">% accuracy</div>
+                </div>
+            </div>
+
+            <div class="text-input-wrapper">
+                <div class="text-display" id="text-display"></div>
+                <textarea id="typing-input" autocomplete="off" spellcheck="false" placeholder=""></textarea>
+            </div>
+
+            <div class="button-section">
+                <button id="reset-btn" class="btn btn-secondary">Reset</button>
+            </div>
+
+            <div class="stats" id="stats" style="display: none;">
+                <h2>Results</h2>
+                <div class="stat-item">
+                    <span class="stat-label">Typing Speed:</span>
+                    <span class="stat-value" id="speed">0 WPM</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Accuracy:</span>
+                    <span class="stat-value" id="accuracy">0%</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Words Typed:</span>
+                    <span class="stat-value" id="words-typed">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Correct Words:</span>
+                    <span class="stat-value" id="correct-words">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Incorrect Words:</span>
+                    <span class="stat-value" id="incorrect-words">0</span>
+                </div>
+                <button id="restart-btn" class="btn btn-primary">Try Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
